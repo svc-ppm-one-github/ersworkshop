@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="sample" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="sample.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="JOBS">
+    <resourceUri>JOBS</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="JOBS">
+  <attributes>
+    <attribute id="CURRENT_ROLE" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_ROLE"/>
+      <keyMapping columnObjectName="JOBS" columnName="CURRENT_ROLE"/>
+    </attribute>
+    <attribute id="JOB_LIKES" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="JOB_LIKES"/>
+      <keyMapping columnObjectName="JOBS" columnName="JOB_LIKES"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="AGE" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="AGE"/>
+      <measureMapping columnObjectName="JOBS" columnName="AGE"/>
+    </measure>
+    <measure id="CURRENT_TENURE" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="CURRENT_TENURE"/>
+      <measureMapping columnObjectName="JOBS" columnName="CURRENT_TENURE"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
